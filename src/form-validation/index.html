@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Angular LanchPad - Form Validation</title>
+    <script src="index.css"></script>
+</head>
+
+<body>
+<header>
+
+    <div class="shell" ng-controller="MainCtrl">
+        <h1>Form Validation</h1>
+
+        <div>
+
+            Input:
+            <input name="phone" type="text" ng-model="sentence"/>
+
+            Formatted Text:
+            <input each-char-spacer vowel-remover upper-caser name="phone" type="text" ng-model="sentence"/>
+
+            Read Only:
+            <span ng-bind="sentence"></span>
+
+            <hr/>
+            <form name="validatorForm">
+                Input Phone:
+                <input name="phone" phone-alpha-validator="true" phone-formatter="true" type="text"
+                       ng-model="phoneNumberObj"/>
+
+                Formatted Phone:
+                <span ng-bind="phoneNumberObj | phone"></span>
+
+                Model: <span> {{ phoneNumberObj }}</span>
+
+                <strong>$error</strong> {{validatorForm.phone.$error}}
+            </form>
+
+            <hr/>
+            <button type="submit" ng-click="submit()">submit</button>
+
+        </div>
+    </div>
+
+
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
