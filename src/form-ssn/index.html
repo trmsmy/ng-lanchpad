@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Angular LanchPad - Form Validation</title>
+    <script src="index.css"></script>
+</head>
+
+<body>
+<header>
+
+    <div class="shell" ng-controller="MainCtrl">
+        <h1>Form Validation</h1>
+
+        <div>
+
+            Read Only:
+            <span ng-bind="ssn"></span>
+
+            <hr/>
+            FORM
+            <hr/>
+            <form name="validatorForm">
+                Input Phone:
+                <input name="ssn" ssn-formatter type="text" ng-model="ssn"/>
+
+                Formatted SSN:
+                <span ng-bind="ssn"></span>
+
+                Model: <span> {{ ssn }}</span>
+
+            </form>
+
+            <hr/>
+            <button type="submit" ng-click="submit()">submit</button>
+
+        </div>
+    </div>
+
+
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
