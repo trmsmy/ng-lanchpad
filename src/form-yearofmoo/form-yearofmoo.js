@@ -12,6 +12,9 @@ angular.module('app', ['ngMessages'])
             $scope.locations = locations;
         });
 
+        $scope.data = $scope.data || {};
+        $scope.data.phone = {"areaCode":"111","prefix":"111","lineNumber":"1234"};
+
         $scope.phoneNumberRegex = /\(\d{3}\) \d{3}-\d{4}/;
 
         $scope.fakeUsernames = ['angular', 'username', 'user', 'john', 'eric', 'noob', 'ng'];
